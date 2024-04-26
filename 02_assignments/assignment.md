@@ -11,10 +11,10 @@
     * Open a private window in your browser. Copy and paste the link to your pull request into the address bar. Make sure you can see your pull request properly. This helps the technical facilitator and learning support staff review your submission easily.
 
 Checklist:
-- [ ] Create a branch called `assignment`.
-- [ ] Ensure that the repository is public.
-- [ ] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
-- [ ] Verify that the link is accessible in a private browser window.
+- [X] Create a branch called `assignment`.
+- [X] Ensure that the repository is public.
+- [X] Review [the PR description guidelines](https://github.com/UofT-DSI/onboarding/blob/main/onboarding_documents/submissions.md#guidelines-for-pull-request-descriptions) and adhere to them.
+- [X] Verify that the link is accessible in a private browser window.
 
 # Assignment: The Secret Password
 
@@ -22,56 +22,71 @@ You are stuck in a virtual room and can only leave if you figure out the passwor
 
 1. The very odd and inedible ingredient in a cake recipe
 
-### No idea on how to automate this search, if do it manually this can be used:
-### Go to the destination folder:    cd 02_assignments/clues/food/cake
-### Open files one by one:   cat chocolate_cake.txt and find the odd and inedible ingredient
-### OR
-#### If exact file known and ingredient name in known this can search the string:      grep -r "Paper" 02_assignments/clues/food/cake
-### OR
-#### If exact file is unknown and ingredient name in known this can search the string: find . -type f -exec grep -H "Paper" {} +
+#### No idea on how to automate this search, if do it manually this can be used:
+#### Go to the destination folder:    
+```cd 02_assignments/clues/food/cake```
+#### Open files one by one:   
+```cat vanilla_cake.txt``` 
+#### and find the odd and inedible ingredient
+#### OR
+#### If exact file known and ingredient name in known this can search the string:      
+```grep -r "Paper" 02_assignments/clues/food/cake```
+#### OR
+#### If exact file is unknown and ingredient name in known this can search the string: 
+```find . -type f -exec grep -H "Paper" {} +```
 
 ## Paper Rings
 
 2. The season number that contains only 18 episodes (Hint: How do you list them?)
 
-### Go to the destination folder:    cd 02_assignments/clues/shows/friends
-### Now we can loop through the folders and find the one that contains 18 files
-### for season_folder in season_*; do
-###    num_episodes=$(ls -1 "$season_folder" | wc -l)
-###    if [ "$num_episodes" -eq 18 ]; then
-###        season_number=$(echo "$season_folder" | sed 's/season_//')
-###        echo "$season_number"
-###    fi
-### done
-
+#### Go to the destination folder:    
+```cd 02_assignments/clues/shows/friends```
+#### Now we can loop through the folders and find the one that contains 18 files
+```
+ for season_folder in season_*; do
+    num_episodes=$(ls -1 "$season_folder" | wc -l)
+    if [ "$num_episodes" -eq 18 ]; then
+        season_number=$(echo "$season_folder" | sed 's/season_//')
+        echo "$season_number"
+    fi
+ done
+```
 
 ## 10
 
 3. Fifth word of Season 6, Episode 21 of Friends
 
-### Go to the destination folder:       cd 02_assignments/clues/shows/friends/season_6
-### Find the word:                      awk '{print $5}' "$(ls -1 *21.txt | head -n 1)"
+#### Go to the destination folder:       
+```cd 02_assignments/clues/shows/friends/season_6```
+#### Find the word:                      
+```awk '{print $5}' "$(ls -1 *21.txt | head -n 1)"```
 
 ## Meets
 
 4. Fifth word of the fifth fictional Space Wars series
 
-### Go to the destination folder:       cd 02_assignments/clues/movies/space_wars
-### Find the word:                      awk '{print $5}' fifth_movie.txt
+#### Go to the destination folder:       
+```cd 02_assignments/clues/movies/space_wars```
+#### Find the word:                      
+```awk '{print $5}' fifth_movie.txt```
 
 ## and
 
 5. Second word of this song that's exactly 4 minutes long in this "colour" album
 
-### Go to the destination folder:       cd 02_assignments/clues/albums/red
-### Find the word:                      grep '^Title: ' song_5.txt | sed 's/Title: //' | awk '{print $2}'
+#### Go to the destination folder:       
+```cd 02_assignments/clues/albums/red```
+#### Find the word:                      
+```grep '^Title: ' song_5.txt | sed 's/Title: //' | awk '{print $2}'```
 
 ## Lucky
 
 6. The fourth word to the fourth Hunger Games movie
 
-### Go to the destination folder:       cd 02_assignments/clues/movies/hanger_games
-### Find the word:                      awk '{print $4}' movie_4.txt
+#### Go to the destination folder:       
+```cd 02_assignments/clues/movies/hanger_games```
+#### Find the word:                      
+```awk '{print $4}' movie_4.txt```
 
 ## the
 
